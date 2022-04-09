@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="./theme.css">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+  <script type="module">
+    import useTheme from "./config-theme.js";
+    window.addEventListener("load", () => {
+      console.log('load')
+      useTheme();
+    });
+    window.changeTheme = function (theme) {
+      console.log('changeTheme', theme)
+      useTheme(theme)
+    }
+  </script>
+  <div class="header" data-theme>
+    你信不信我能换皮肤
+  </div>
+  <div>
+    <span onclick="changeTheme('light')">light</span>
+    <span onclick="changeTheme('dark')">dark</span>
+  </div>
+</body>
+</html>
